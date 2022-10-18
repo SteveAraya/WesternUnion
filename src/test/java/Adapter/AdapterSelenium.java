@@ -1,11 +1,19 @@
 package Adapter;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class AdapterSelenium {
@@ -55,6 +63,92 @@ public class AdapterSelenium {
 	public void openURL( String url ) {
 		
 		driver.get( url );
+		
+	}
+	
+	public void toClick( By locator ) {
+		
+		try {
+			
+			createElement( locator,"CLICK" ).click();
+			
+		}catch( ElementClickInterceptedException e ) {
+			
+			System.out.println("The element with the path: " + locator + " can't be clicked.");
+			Assert.fail("The element with the path: " + locator + " can't be clicked.");
+			
+		}
+		
+	}
+	
+	public String getText( By locator ) {
+		
+		String text = "";
+		
+		try {
+			
+			text = createElement( locator, "GET" ).getText();
+			
+		}catch( ElementNotInteractableException e){
+			
+			System.out.println("The element with the path: " + locator + " can't interact.");
+			Assert.fail("The element with the path: " + locator + " can't interact.");
+			
+		}
+		
+		return text;
+		
+		
+	}
+	
+	public String getUSAUrl( ) {
+		
+		String URL = driver.getCurrentUrl();
+		return URL;
+		
+	}
+	
+	public void select(By locator, String value) {
+		
+		Select elementToSelect = new Select(createElement(locator, "SELECT"));
+		elementToSelect.selectByValue(value);
+		
+	}
+	
+	public WebElement createElement( By locator, String action ) {
+		
+		WebDriverWait wait  = new WebDriverWait( driver, Duration.ofSeconds(20) );
+		WebElement element  = null;
+		
+		try {
+			
+			if(action.equals("CLICK")) {
+				
+				element = wait.until(ExpectedConditions.elementToBeClickable( locator ));
+		
+				
+			}else if(action.equals("GET")) {
+				
+				element = wait.until(ExpectedConditions.visibilityOfElementLocated( locator ));
+				
+			}else if(action.equals("SELECT")) {
+				
+				element = wait.until(ExpectedConditions.visibilityOfElementLocated( locator ));
+				
+			}else {
+				
+				element = wait.until(ExpectedConditions.visibilityOfElementLocated( locator ));
+				
+			}
+			
+		}catch( NoSuchElementException e ){
+			
+			System.out.println("The element with the path: : " + locator + " does not exist.");
+			Assert.fail("The element with the path: : " + locator + " does not exist.");
+			
+		}
+		
+		return element;
 		
 	}
 	

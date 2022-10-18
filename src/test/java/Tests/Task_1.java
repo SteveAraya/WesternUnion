@@ -1,5 +1,7 @@
 package Tests;
 
+import java.io.IOException;
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -44,15 +46,23 @@ public class Task_1 {
 	}
 	
 	@Test
-	public void changeCountrySelection() throws InterruptedException {
+	public void changeCountrySelection() throws InterruptedException, IOException {
 		
-//		1.	Navigate to https://www.westernunion.com/lt/en/home.html
-//		2.	Expand Burger menu
-//		3.	Select Settings page
-//		4.	Change WU.com Country to United States
-//		5.	Assert that correct country page was loaded.
+//		1.	Navigate to https://www.westernunion.com/lt/en/home.html (Ready)
+//		2.	Expand Burger menu                                       (Ready)
+//		3.	Select Settings page                                     (Ready)
+//		4.	Change WU.com Country to United States                   (Ready)
+//		5.	Assert that correct country page was loaded.             (Ready)
 		
-		Thread.sleep(5000);
+		
+		PHome.clickBurgerBtn();
+		PHome.clickSettingsOption();
+		PHome.validateSettingPage();
+		PHome.selectUSACountry("object:252");
+		PHome.clickNavigateYesBtn();
+		PHome.validateUSASelectFooter();
+		PHome.validateUSAUrl();
+		Thread.sleep(3000);
 		
 	}
 
