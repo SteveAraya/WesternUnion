@@ -67,6 +67,7 @@ public class AdapterSelenium {
 		
 	}
 	
+	// Click action.
 	public void toClick( By locator ) {
 		
 		try {
@@ -82,6 +83,7 @@ public class AdapterSelenium {
 		
 	}
 	
+	// Get text action.
 	public String getText( By locator ) {
 		
 		String text = "";
@@ -99,9 +101,9 @@ public class AdapterSelenium {
 		
 		return text;
 		
-		
 	}
 	
+	// Get the USA URL.
 	public String getUSAUrl( ) {
 		
 		String URL = driver.getCurrentUrl();
@@ -109,6 +111,7 @@ public class AdapterSelenium {
 		
 	}
 	
+	// Select action.
 	public void select(By locator, String value) {
 		
 		Select elementToSelect = new Select(createElement(locator, "SELECT"));
@@ -116,6 +119,7 @@ public class AdapterSelenium {
 		
 	}
 	
+	// Input action.
 	public void input( By locator, String value ) {
 		
 		WebElement elemento = createElement( locator, "INPUT" );
@@ -125,6 +129,7 @@ public class AdapterSelenium {
 		
 	}
 	
+	// Create elements and wait for them to appear.
 	public WebElement createElement( By locator, String action ) {
 		
 		WebDriverWait wait  = new WebDriverWait( driver, Duration.ofSeconds(60) );

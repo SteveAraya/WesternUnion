@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Western Union">
+
+	<test name="Task one">
+		
+		<parameter name="browserType"  value="Firefox"></parameter>
+		<parameter name="driverPath"   value="/Users/stevearaya/Documents/Drivers/geckodriver"></parameter>
+		<parameter name="siteUrl"      value="https://www.westernunion.com/lt/en/home.html"></parameter>
+		
+		<classes>
+		
+			<class name="Tests.Task_1">
+				<methods>  
+					<include name="changeCountrySelection"></include>
+				</methods>
+			</class>
+		
+		</classes>
+
+	</test>
+
+	<test name="Task two">
+		
+		<parameter name="browserType"  value="Firefox"></parameter>
+		<parameter name="driverPath"   value="/Users/stevearaya/Documents/Drivers/geckodriver"></parameter>
+		<parameter name="siteUrl"      value="https://www.westernunion.com/lt/en/home.html"></parameter>
+		
+		<classes>
+		
+			<class name="Tests.Task_2">
+				<methods>  
+					<include name="openAgentLocationByZipCode"></include>
+				</methods>
+			</class>
+		
+		</classes>
+
+	</test>
+	
+</suite>

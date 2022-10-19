@@ -6,42 +6,45 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import Pages.HomePage;
 
 public class Task_1 {
 	
-	HomePage PHome;
-	String browserType = "Chrome";
-	String driverPath  = "/Users/stevearaya/Documents/Drivers/chromedriver";
-	String url         = "https://www.westernunion.com/lt/en/home.html";
 	
+	HomePage PHome;
+	String countryUSAID = "object:252";
+	
+	
+	@Parameters({"browserType", "driverPath", "siteUrl"})
 	@BeforeClass
-	public void beforeClass() {
+	public void beforeClass( String browserType, String driverPath, String siteUrl ) {
 		
 		PHome = new HomePage( browserType, driverPath );
+		PHome.openURL( siteUrl );
 		
 	}
 	
 	@BeforeMethod
 	public void beforeTest() {
 		
-		PHome.openURL( url );
+		// Actions before every test.
 		
 	}
 	
 	@AfterClass
 	public void afterClass() {
 		
-		PHome.closeDriver();
+//		PHome.closeDriver();
 		
 	}
 	
 	@AfterMethod
 	public void afterTest() {
 		
-		
+		// Actions after every test.
 		
 	}
 	
@@ -58,7 +61,7 @@ public class Task_1 {
 		PHome.clickBurgerBtn();
 		PHome.clickSettingsOption();
 		PHome.validateSettingPage();
-		PHome.selectUSACountry("object:252");
+		PHome.selectUSACountry( countryUSAID );
 		PHome.clickNavigateYesBtn();
 		PHome.validateUSASelectFooter();
 		PHome.validateUSAUrl();
