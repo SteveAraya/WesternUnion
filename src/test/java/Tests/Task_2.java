@@ -11,8 +11,8 @@ import Pages.HomePage;
 public class Task_2 {
 	
 	HomePage PHome;
-	String browserType = "Chrome";
-	String driverPath  = "/Users/stevearaya/Documents/Drivers/chromedriver";
+	String browserType = "Firefox";
+	String driverPath  = "/Users/stevearaya/Documents/Drivers/geckodriver";
 	String url         = "https://www.westernunion.com/lt/en/home.html";
 	
 	@BeforeClass
@@ -50,7 +50,14 @@ public class Task_2 {
 //		I want automation tool to search for open agent locations near my Zip code 08247
 //		So that I could get address details of the first location printed in console
 		
-		Thread.sleep(5000);
+		PHome.clickFindLocationsOption();
+		Thread.sleep(3000);
+		PHome.inputAddress( "08247" );
+		PHome.clickOpenOption();
+		PHome.clickDistanceOption();
+		PHome.getAgentLocation();
+		
+		Thread.sleep(3000);
 		
 	}
 

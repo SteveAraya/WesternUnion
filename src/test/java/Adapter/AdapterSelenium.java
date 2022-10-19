@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -115,9 +116,18 @@ public class AdapterSelenium {
 		
 	}
 	
+	public void input( By locator, String value ) {
+		
+		WebElement elemento = createElement( locator, "INPUT" );
+		elemento.clear();
+		elemento.sendKeys( value );
+		elemento.sendKeys( Keys.ENTER );
+		
+	}
+	
 	public WebElement createElement( By locator, String action ) {
 		
-		WebDriverWait wait  = new WebDriverWait( driver, Duration.ofSeconds(20) );
+		WebDriverWait wait  = new WebDriverWait( driver, Duration.ofSeconds(60) );
 		WebElement element  = null;
 		
 		try {
@@ -126,6 +136,10 @@ public class AdapterSelenium {
 				
 				element = wait.until(ExpectedConditions.elementToBeClickable( locator ));
 		
+				
+			}else if(action.equals("INPUT")) {
+				
+				element = wait.until(ExpectedConditions.presenceOfElementLocated( locator ));
 				
 			}else if(action.equals("GET")) {
 				

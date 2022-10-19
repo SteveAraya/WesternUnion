@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tests.Task_1">
+      <class name="Tests.Task_2">
         <methods>
-          <include name="beforeTest"/>
-          <include name="changeCountrySelection"/>
           <include name="afterTest"/>
+          <include name="beforeTest"/>
           <include name="afterClass"/>
           <include name="beforeClass"/>
+          <include name="openAgentLocationByZipCode"/>
         </methods>
-      </class> <!-- Tests.Task_1 -->
+      </class> <!-- Tests.Task_2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

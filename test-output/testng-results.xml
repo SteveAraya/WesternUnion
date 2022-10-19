@@ -1,33 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-17T23:52:19 CST" name="Default suite" finished-at="2022-10-17T23:52:36 CST" duration-ms="17753">
+  <suite started-at="2022-10-18T21:33:26 CST" name="Default suite" finished-at="2022-10-18T21:34:46 CST" duration-ms="79925">
     <groups>
     </groups>
-    <test started-at="2022-10-17T23:52:19 CST" name="Default test" finished-at="2022-10-17T23:52:36 CST" duration-ms="17753">
-      <class name="Tests.Task_1">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Tests.Task_1@4b5a5ed1]" started-at="2022-10-17T23:52:19 CST" name="beforeClass" finished-at="2022-10-17T23:52:21 CST" duration-ms="2879" status="PASS">
+    <test started-at="2022-10-18T21:33:26 CST" name="Default test" finished-at="2022-10-18T21:34:46 CST" duration-ms="79925">
+      <class name="Tests.Task_2">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Tests.Task_2@4b5a5ed1]" started-at="2022-10-18T21:33:26 CST" name="beforeClass" finished-at="2022-10-18T21:33:30 CST" duration-ms="3586" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Tests.Task_1@4b5a5ed1]" started-at="2022-10-17T23:52:21 CST" name="beforeTest" finished-at="2022-10-17T23:52:23 CST" duration-ms="1695" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Tests.Task_2@4b5a5ed1]" started-at="2022-10-18T21:33:30 CST" name="beforeTest" finished-at="2022-10-18T21:33:32 CST" duration-ms="1882" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="changeCountrySelection()[pri:0, instance:Tests.Task_1@4b5a5ed1]" started-at="2022-10-17T23:52:23 CST" name="changeCountrySelection" finished-at="2022-10-17T23:52:36 CST" duration-ms="12877" status="PASS">
+        <test-method signature="openAgentLocationByZipCode()[pri:0, instance:Tests.Task_2@4b5a5ed1]" started-at="2022-10-18T21:33:32 CST" name="openAgentLocationByZipCode" finished-at="2022-10-18T21:34:46 CST" duration-ms="73862" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.cssSelector: .wu_AddressInput_TextInput___1hB48 (tried for 60 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.cssSelector: .wu_AddressInput_TextInput___1hB48 (tried for 60 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at Adapter.AdapterSelenium.createElement(AdapterSelenium.java:142)
+at Adapter.AdapterSelenium.input(AdapterSelenium.java:121)
+at Pages.HomePage.inputAddress(HomePage.java:82)
+at Tests.Task_2.openAgentLocationByZipCode(Task_2.java:55)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: .wu_AddressInput_TextInput___1hB48
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'SteveAraya.local', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.6', java.version: '18'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [4714d80a-53ef-4503-8f35-35d4d2f6c7dd, findElement {using=css selector, value=.wu_AddressInput_TextInput___1hB48}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 106.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20221010110315, moz:debuggerAddress: 127.0.0.1:52341, moz:geckodriverVersion: 0.32.0, moz:headless: false, moz:platformVersion: 21.6.0, moz:processID: 38002, moz:profile: /var/folders/qb/ypxxvtw17h7..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://127.0.0.1:52341/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4714d80a-53ef-4503-8f35-35d4d2f6c7dd
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:174)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- changeCountrySelection -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:Tests.Task_1@4b5a5ed1]" started-at="2022-10-17T23:52:36 CST" name="afterTest" finished-at="2022-10-17T23:52:36 CST" duration-ms="0" status="PASS">
+        </test-method> <!-- openAgentLocationByZipCode -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Tests.Task_2@4b5a5ed1]" started-at="2022-10-18T21:34:46 CST" name="afterTest" finished-at="2022-10-18T21:34:46 CST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:Tests.Task_1@4b5a5ed1]" started-at="2022-10-17T23:52:36 CST" name="afterClass" finished-at="2022-10-17T23:52:36 CST" duration-ms="272" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Tests.Task_2@4b5a5ed1]" started-at="2022-10-18T21:34:46 CST" name="afterClass" finished-at="2022-10-18T21:34:46 CST" duration-ms="554" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- Tests.Task_1 -->
+      </class> <!-- Tests.Task_2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
