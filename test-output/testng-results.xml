@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-18T22:17:06 CST" name="Western Union" finished-at="2022-10-18T22:18:33 CST" duration-ms="86997">
+    <groups>
+    </groups>
+    <test started-at="2022-10-18T22:17:06 CST" name="Task one" finished-at="2022-10-18T22:17:22 CST" duration-ms="16266">
+      <class name="Tests.Task_1">
+        <test-method is-config="true" signature="beforeClass(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Tests.Task_1@5c909414]" started-at="2022-10-18T22:17:06 CST" name="beforeClass" finished-at="2022-10-18T22:17:10 CST" duration-ms="3982" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[/Users/stevearaya/Documents/Drivers/chromedriver]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://www.westernunion.com/lt/en/home.html]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Tests.Task_1@5c909414]" started-at="2022-10-18T22:17:10 CST" name="beforeTest" finished-at="2022-10-18T22:17:10 CST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="changeCountrySelection()[pri:0, instance:Tests.Task_1@5c909414]" started-at="2022-10-18T22:17:10 CST" name="changeCountrySelection" finished-at="2022-10-18T22:17:22 CST" duration-ms="12253" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changeCountrySelection -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Tests.Task_1@5c909414]" started-at="2022-10-18T22:17:22 CST" name="afterTest" finished-at="2022-10-18T22:17:22 CST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Tests.Task_1@5c909414]" started-at="2022-10-18T22:17:22 CST" name="afterClass" finished-at="2022-10-18T22:17:22 CST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Tests.Task_1 -->
+    </test> <!-- Task one -->
+    <test started-at="2022-10-18T22:17:22 CST" name="Task two" finished-at="2022-10-18T22:18:33 CST" duration-ms="70714">
+      <class name="Tests.Task_2">
+        <test-method is-config="true" signature="beforeClass(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Tests.Task_2@e056f20]" started-at="2022-10-18T22:17:22 CST" name="beforeClass" finished-at="2022-10-18T22:17:23 CST" duration-ms="991" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[/Users/stevearaya/Documents/Drivers/chromedriver]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[https://www.westernunion.com/lt/en/home.html]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Tests.Task_2@e056f20]" started-at="2022-10-18T22:17:23 CST" name="beforeTest" finished-at="2022-10-18T22:17:23 CST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="openAgentLocationByZipCode()[pri:0, instance:Tests.Task_2@e056f20]" started-at="2022-10-18T22:17:23 CST" name="openAgentLocationByZipCode" finished-at="2022-10-18T22:18:33 CST" duration-ms="69498" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.cssSelector: .wu_AddressInput_TextInput___1hB48 (tried for 60 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.cssSelector: .wu_AddressInput_TextInput___1hB48 (tried for 60 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at Adapter.AdapterSelenium.createElement(AdapterSelenium.java:147)
+at Adapter.AdapterSelenium.input(AdapterSelenium.java:125)
+at Pages.HomePage.inputAddress(HomePage.java:92)
+at Tests.Task_2.openAgentLocationByZipCode(Task_2.java:56)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".wu_AddressInput_TextInput___1hB48"}
+  (Session info: chrome=106.0.5249.119)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'SteveAraya.local', ip: '127.0.0.1', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.6', java.version: '18'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6ccf4ce5aea52b299e44fb7ece7d6e62, findElement {using=css selector, value=.wu_AddressInput_TextInput___1hB48}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/qb/ypxxvtw17h7...}, goog:chromeOptions: {debuggerAddress: localhost:65302}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:65302/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ccf4ce5aea52b299e44fb7ece7d6e62
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:174)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openAgentLocationByZipCode -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Tests.Task_2@e056f20]" started-at="2022-10-18T22:18:33 CST" name="afterTest" finished-at="2022-10-18T22:18:33 CST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Tests.Task_2@e056f20]" started-at="2022-10-18T22:18:33 CST" name="afterClass" finished-at="2022-10-18T22:18:33 CST" duration-ms="212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Tests.Task_2 -->
+    </test> <!-- Task two -->
+  </suite> <!-- Western Union -->
+</testng-results>

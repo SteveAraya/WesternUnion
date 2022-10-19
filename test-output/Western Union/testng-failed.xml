@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Western Union]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Task two(failed)">
+    <parameter name="siteUrl" value="https://www.westernunion.com/lt/en/home.html"/>
+    <parameter name="driverPath" value="/Users/stevearaya/Documents/Drivers/chromedriver"/>
+    <parameter name="browserType" value="Chrome"/>
+    <classes>
+      <class name="Tests.Task_2">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="openAgentLocationByZipCode"/>
+        </methods>
+      </class> <!-- Tests.Task_2 -->
+    </classes>
+  </test> <!-- Task two(failed) -->
+</suite> <!-- Failed suite [Western Union] -->
